@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./
+    container_name: client
+    networks:
+      - task_manager_client_default
+      - task_manager_server_default
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - DB_DATABASE=${DB_DATABASE}
+      - SERVER_PORT=${SERVER_PORT}
+
+networks:
+  task_manager_client_default:
+    external: true
+  task_manager_server_default:
+    external: true
