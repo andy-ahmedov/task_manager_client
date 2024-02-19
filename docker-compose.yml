@@ -5,7 +5,6 @@ services:
     build: ./
     container_name: client
     networks:
-      - task_manager_client_default
       - task_manager_server_default
     environment:
       - DB_HOST=${DB_HOST}
@@ -17,7 +16,5 @@ services:
       - SERVER_HOST=${SERVER_HOST}
 
 networks:
-  task_manager_client_default:
-    external: true
   task_manager_server_default:
     external: true

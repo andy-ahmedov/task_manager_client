@@ -13,7 +13,7 @@ up:
 # and calls the getall command. To call another command,
 # change the command CMD[""] in the dockerfile
 
-server_run: 
+local_run: 
 	go run client/cmd/main.go
 
 client_run: 

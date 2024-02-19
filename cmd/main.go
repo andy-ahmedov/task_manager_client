@@ -7,7 +7,9 @@ import (
 	"github.com/andy-ahmedov/task_manager_client/internal/config"
 	"github.com/andy-ahmedov/task_manager_client/internal/logger"
 	grpc_client "github.com/andy-ahmedov/task_manager_client/internal/transport/grpc"
+	"github.com/andy-ahmedov/task_manager_client/internal/transport/rabbitmq"
 	"github.com/spf13/cobra"
+	// "github.com/streadway/amqp"
 )
 
 func main() {
@@ -24,12 +26,14 @@ func main() {
 		logg.Fatal(err)
 	}
 
+	broker := rabbitmq.NewBroker(&cfg.Brkr, logg)
+
 	var rootCmd = &cobra.Command{Use: "app"}
-	cmdCreate := commands.CommandCreate(client, rootCmd)
-	cmdUpdate := commands.CommandUpdate(client, rootCmd)
-	cmdDelete := commands.CommandDelete(client, rootCmd)
-	cmdGetAll := commands.CommandGetAll(client, rootCmd)
-	cmdGet := commands.CommandGet(client, rootCmd)
+	cmdCreate := commands.CommandCreate(client, rootCmd, broker)
+	cmdUpdate := commands.CommandUpdate(client, rootCmd, broker)
+	cmdDelete := commands.CommandDelete(client, rootCmd, broker)
+	cmdGetAll := commands.CommandGetAll(client, rootCmd, broker)
+	cmdGet := commands.CommandGet(client, rootCmd, broker)
 
 	rootCmd.AddCommand(cmdCreate, cmdUpdate, cmdGet, cmdGetAll, cmdDelete)
 	rootCmd.Execute()
