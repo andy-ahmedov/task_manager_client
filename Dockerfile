@@ -12,4 +12,5 @@ FROM alpine:3.19
 WORKDIR /root/
 COPY --from=builder /github.com/andy-ahmedov/task_manager_client/.bin/client_init .
 RUN apk add libc6-compat
-CMD ["ls", "-la"]
+# CMD ["ls", "-la"]
+CMD ["./client_init", "getall"]

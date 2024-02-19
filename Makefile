@@ -7,6 +7,12 @@ run:
 build_up:
 	sudo docker-compose up --build client 
 
+up:
+	sudo docker-compose up client 
+# By default, the make up command starts the client 
+# and calls the getall command. To call another command,
+# change the command CMD[""] in the dockerfile
+
 server_run: 
 	go run client/cmd/main.go
 
