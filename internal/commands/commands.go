@@ -101,7 +101,10 @@ func CommandGetAll(client *grpc_client.Client, cmd *cobra.Command, broker *rabbi
 
 			item := NewItem("getall", err)
 
-			broker.SendToQueue(item)
+			err = broker.SendToQueue(item)
+			if err != nil {
+				broker.Log.Errorf("Error when send Data to broker: %v", err)
+			}
 			fmt.Println("Getting all tasks:")
 			for _, task := range tasks {
 				fmt.Println(task)
