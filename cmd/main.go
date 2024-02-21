@@ -9,7 +9,6 @@ import (
 	grpc_client "github.com/andy-ahmedov/task_manager_client/internal/transport/grpc"
 	"github.com/andy-ahmedov/task_manager_client/internal/transport/rabbitmq"
 	"github.com/spf13/cobra"
-	// "github.com/streadway/amqp"
 )
 
 func main() {
