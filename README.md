@@ -9,8 +9,13 @@
 </p>
 <hr>
 
-![server](https://i.imgur.com/vtXhJBU.png)
+![client](https://i.imgur.com/Du7KTZW.png)
 
+<hr>
+
+![server](https://i.imgur.com/v5jfSXj.png)
+
+<hr>
 
 ## ABOUT ##
 
@@ -28,22 +33,12 @@ Final technology stack: Go, Gin, REST API, gRPC, PostgreSQL, MongoDB, Docker, JW
 
 ```bash
 # Clone this project
-$ git clone https://github.com/andy-ahmedov/crud_service
+$ git clone https://github.com/andy-ahmedov/task_manager_client
 
 # Create in the root directory of the project and fill in the .env file
 
-# Up MongoDB
-$ make mongodb
-
-# Up PostgreSQL
+# Up client
 $ make up
-
-# Create Tables
-$ make create_table
-
-# Run the project
-$ make run
-
 ```
 
 ## 🔨 STACK ##
