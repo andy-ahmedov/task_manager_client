@@ -13,7 +13,7 @@
 
 <hr>
 
-![server](https://i.imgur.com/v5jfSXj.png)
+![client_server](https://i.imgur.com/v5jfSXj.png)
 
 <hr>
 
