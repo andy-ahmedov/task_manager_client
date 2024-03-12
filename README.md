@@ -19,13 +19,7 @@
 
 ## ABOUT ##
 
-This is a service written in Go that provides a user-friendly interface for managing users and books via a REST API. The service supports user registration and authentication using JWT tokens, ensuring security and efficiency. The service provides the ability to create, update, delete and obtain information about books, access to which is limited to authenticated users.
-
-Swagger documentation is provided for the convenience of users and developers. Interaction with the audit-log-server is carried out via gRPC to write activity logs to the MongoDB database.
-
-The service uses PostgreSQL to store information about users, books, and refresh tokens, and MongoDB to store logs. Both databases run in Docker containers for ease of deployment and scalability.
-
-Final technology stack: Go, Gin, REST API, gRPC, PostgreSQL, MongoDB, Docker, JWT. This service is an excellent example of modern, secure and scalable web development.
+This is a service written in Go that provides a convenient command line interface for working with tasks. You can add, delete, change and receive tasks.
 
 <hr>
 
